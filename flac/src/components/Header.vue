@@ -29,7 +29,7 @@ export default {
 .header {
   display: flex;
   justify-content: space-between;
-  padding: 20px;
+  padding: 21px;
   background-color: #333;
   color: #fff;
 }
