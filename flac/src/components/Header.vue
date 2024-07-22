@@ -1,21 +1,32 @@
 <template>
   <header class="header">
-    <div class="header__logo">
-<!--      <img src="path-to-logo.png" alt="Logo" />-->
+    <div class="header__container">
+      <a href="#" class="header__logo">
+        <img src="@/assets/img/header/logo.png" alt="Logo">
+      </a>
+      <div class="header__nav">
+        <div class="header__nav-list">
+          <div class="header__nav-item">
+            <li><a href="#">Features</a></li>
+          </div>
+          <div class="header__nav-item">
+            <li><a href="#">Developers</a></li>
+          </div>
+          <div class="header__nav-item">
+            <li><a href="#">Company</a></li>
+          </div>
+          <div class="header__nav-item">
+            <li><a href="#">Blog</a></li>
+          </div>
+          <div class="header__nav-item">
+            <li><a href="#">Changelog</a></li>
+          </div>
+        </div>
+      </div>
+      <div class="header__cta">
+        <button class="header__cta-button">Join waitlist</button>
+      </div>
     </div>
-    <nav class="header__nav">
-      <ul class="header__nav-list">
-        <li class="header__nav-item">
-          <a href="#" class="header__nav-link">Home</a>
-        </li>
-        <li class="header__nav-item">
-          <a href="#" class="header__nav-link">About</a>
-        </li>
-        <li class="header__nav-item">
-          <a href="#" class="header__nav-link">Contact</a>
-        </li>
-      </ul>
-    </nav>
   </header>
 </template>
 
@@ -27,39 +38,52 @@ export default {
 
 <style scoped>
 .header {
-  display: flex;
-  justify-content: space-between;
-  padding: 21px;
-  background-color: #333;
-  color: #fff;
+  padding: 13px 191px;
+  width: auto;
+  background-color: #020103;
+  font-size: 13px;
+  line-height: 26px;
+  color: rgba(255, 255, 255, 0.6);
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
-
-.header__logo img {
-  height: 40px;
-}
-
-.header__nav {
+.header__container {
   display: flex;
+  flex-direction: row;
   align-items: center;
+  gap: 74px;
+  width: fit-content;
+  margin: 0 auto;
 }
-
+.header__logo {
+  width: 38px;
+  height: 38px;
+}
 .header__nav-list {
   display: flex;
-  list-style: none;
-  margin: 0;
-  padding: 0;
+  flex-direction: row;
+  align-items: center;
+  gap: 30px;
+  padding: 8px 40px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 60px;
 }
-
-.header__nav-item {
-  margin-right: 20px;
+.header__cta {
+  padding: 6px;
+  width: 121px;
+  height: 42px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 12px;
 }
-
-.header__nav-link {
-  color: #fff;
-  text-decoration: none;
-}
-
-.header__nav-link:hover {
-  text-decoration: underline;
+.header__cta-button {
+  width: 109px;
+  height: 30px;
+  background: rgba(140, 69, 255, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: inset 0px 0px 6px 3px rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(7px);
+  /* Note: backdrop-filter has minimal browser support */
+  border-radius: 8px;
+  color: #FFFFFF;
+  cursor: pointer;
 }
 </style>
