@@ -4,25 +4,25 @@
       <a href="#" class="header__logo">
         <img src="@/assets/img/header/logo.png" alt="Logo">
       </a>
-      <div class="header__nav">
-        <div class="header__nav-list">
-          <div class="header__nav-item">
-            <li><a href="#">Features</a></li>
-          </div>
-          <div class="header__nav-item">
-            <li><a href="#">Developers</a></li>
-          </div>
-          <div class="header__nav-item">
-            <li><a href="#">Company</a></li>
-          </div>
-          <div class="header__nav-item">
-            <li><a href="#">Blog</a></li>
-          </div>
-          <div class="header__nav-item">
-            <li><a href="#">Changelog</a></li>
-          </div>
-        </div>
-      </div>
+      <nav class="header__nav">
+          <ul class="header__nav-list">
+            <li class="header__nav-item" >
+              <Dropdown title="Features" v-bind:items="features" />
+            </li>
+            <li class="header__nav-item" >
+              <a class="header__nav-link" href="#">Developers</a>
+            </li>
+            <li class="header__nav-item" >
+              <Dropdown title="Company" v-bind:items="company" />
+            </li>
+            <li class="header__nav-item" >
+              <a class="header__nav-link" href="#">Blog</a>
+            </li>
+            <li class="header__nav-item" >
+              <a class="header__nav-link" href="#">Changelog</a>
+            </li>
+          </ul>
+      </nav>
       <div class="header__cta">
         <button class="header__cta-button">Join waitlist</button>
       </div>
@@ -31,27 +31,46 @@
 </template>
 
 <script>
+import Dropdown from "@/components/Dropdown";
 export default {
   name: 'HeaderComponent',
+  components: {Dropdown},
+  data() {
+    return {
+      features: [
+        { title: "Integration", link: "#" },
+        { title: "Updates", link: "#" },
+        { title: "Security", link: "#" },
+        { title: "Docs", link: "#" },
+        { title: "Pricing", link: "#" }
+      ],
+      company: [
+        { title: "About", link: "#" },
+        { title: "Careers", link: "#" },
+        { title: "Press", link: "#" },
+        { title: "Manifesto", link: "#" }
+      ]
+    }
+  }
 };
 </script>
 
 <style scoped>
 .header {
-  padding: 13px 191px;
+  padding: 13px 0;
   width: auto;
   background-color: #020103;
   font-size: 13px;
   line-height: 26px;
-  color: rgba(255, 255, 255, 0.6);
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  color: #FFFFFF99;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
 .header__container {
+  max-width: 1200px;
   display: flex;
-  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
   gap: 74px;
-  width: fit-content;
   margin: 0 auto;
 }
 .header__logo {
@@ -60,7 +79,6 @@ export default {
 }
 .header__nav-list {
   display: flex;
-  flex-direction: row;
   align-items: center;
   gap: 30px;
   padding: 8px 40px;
@@ -79,11 +97,12 @@ export default {
   height: 30px;
   background: rgba(140, 69, 255, 0.4);
   border: 1px solid rgba(255, 255, 255, 0.15);
-  box-shadow: inset 0px 0px 6px 3px rgba(255, 255, 255, 0.25);
+  box-shadow: inset 0 0 6px 3px rgba(255, 255, 255, 0.25);
   backdrop-filter: blur(7px);
   /* Note: backdrop-filter has minimal browser support */
   border-radius: 8px;
   color: #FFFFFF;
   cursor: pointer;
 }
+
 </style>
