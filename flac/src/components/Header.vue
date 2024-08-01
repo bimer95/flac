@@ -31,7 +31,7 @@
 </template>
 
 <script>
-import Dropdown from "@/components/Dropdown";
+import Dropdown from "@/components/ui/Dropdown.vue";
 export default {
   name: 'HeaderComponent',
   components: {Dropdown},
@@ -81,7 +81,7 @@ export default {
   display: flex;
   align-items: center;
   gap: 30px;
-  padding: 8px 40px;
+  padding: 5px 40px;
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 60px;
 }
